@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/admin', function () {
-    return "hola desde routes admin";
-})->name('prueba.admin');
+
+Route::middleware(['auth', 'isadmin', 'estatus', 'permisos'])->prefix('/dashboard')->group(function () {
+
+    Route::resource('usuarios', 'Admin\UsersController');
+
+});

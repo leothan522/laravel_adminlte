@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Route;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,14 +26,16 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
-        Gate::define('prueba', function ($user){
-            if ($user['role'] == 100){
-                return true;
-            }else{
-                return false;
-            }
+        //Muetra en el sidebar los botones segun el permiso
+
+        Gate::define('usuarios', function ($user){
+            return leerJson(auth()->user()->permisos, 'usuarios.index') == true || auth()->user()->role == 100;
         });
+
+        Gate::define('prueba', function ($user){
+           return true;
+        });
+
 
     }
 }

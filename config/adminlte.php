@@ -15,7 +15,7 @@ return [
     */
 
     'title' => 'AdminLTE 3',
-    'title_prefix' => '',
+    'title_prefix' => 'Proyecto | ',
     'title_postfix' => '',
 
     /*
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -237,35 +237,54 @@ return [
         ],
 
         // Sidebar items:
+        [
+            'text'      => 'Configuración',
+            'icon'      => 'fas fa-fw fa-cogs',
+            'can'       => 'usuarios',
+            'submenu' => [
+                [
+                    'text' => 'Usuarios',
+                    'icon' => 'fas fa-fw fa-users',
+                    'route'  => 'usuarios.index',
+                    'can'  => 'usuarios',
+                ],
+            ],
+        ],
+
+
+
+
+
+        // ***** example ********
         /*[
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],*/
-        [
+        /*[
             'text' => 'blog',
-            /*'url'  => 'admin/blog',*/
+            'url'  => 'admin/blog',
             'route' => 'prueba.admin',
             'can'  => 'prueba',
-        ],
-        [
+        ],*/
+        /*[
             'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'route' => 'prueba.otro',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
+        ],*/
+        /*['header' => 'account_settings'],*/
+        /*[
             'text' => 'profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
+        ],*/
+        /*[
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
+        ],*/
+        /*[
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -302,23 +321,23 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
-        [
+        ],*/
+        /*['header' => 'labels'],*/
+        /*[
             'text'       => 'important',
             'icon_color' => 'red',
             'url'        => '#',
-        ],
-        [
+        ],*/
+        /*[
             'text'       => 'warning',
             'icon_color' => 'yellow',
             'url'        => '#',
-        ],
-        [
+        ],*/
+        /*[
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*
@@ -406,7 +425,7 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     /*'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',*/
                     'location' => 'vendor/sweetalert2/sweetalert2.all.min.js'
                 ],
@@ -417,13 +436,13 @@ return [
             'files' => [
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     /*'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',*/
                     'location' => 'vendor/pace-progress/themes/blue/pace-theme-minimal.css'
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     /*'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',*/
                     'location' => 'vendor/pace-progress/pace.min.js'
                 ],

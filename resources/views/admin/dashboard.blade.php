@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 
-{{--@section('title', 'Dashboard')--}}
+
+@section('title', 'Dashboard')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -11,10 +12,11 @@
     <p>{{ hola() }}</p>
     <p>
         <button onclick="Swal.fire('Any fool can use a computer')">hola</button></p>
+
 @endsection
 
 @section('footer')
-    hola
+    @include('layouts.admin.footer')
 @endsection
 
 @section('css')
