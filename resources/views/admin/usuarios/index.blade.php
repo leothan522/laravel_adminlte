@@ -28,7 +28,7 @@
 
         <div class="col-md-3">
 
-            <div class="card card-outline card-primary" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
+            <div class="card card-gray-dark" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
                 <div class="card-header">
                     <h3 class="card-title">Maximizable</h3>
                     <div class="card-tools">
