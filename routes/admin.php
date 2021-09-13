@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth', 'isadmin', 'estatus', 'permisos'])->prefix('/dashboard')->group(function () {
 
     Route::get('usuarios', 'Admin\UsersController@index')->name('usuarios.index');
+    Route::get('usuarios/export/', 'Admin\UsersController@export')->name('usuarios.excel');
 
 });

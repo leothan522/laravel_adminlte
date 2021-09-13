@@ -23,7 +23,7 @@ function role($i = null){
 function estatusUsuario($i, $icon = null){
     if (is_null($icon)){
         $suspendido = "Suspendido";
-        $activado = "Activado";
+        $activado = "Activo";
     }else{
         $suspendido = '<i class="fa fa-user-slash"></i>';
         $activado = '<i class="fa fa-user-check"></i>';
@@ -53,7 +53,7 @@ function haceCuanto($fecha){
 
 function fecha($fecha, $format = null){
     $carbon = new Carbon();
-    if ($format == null){ $format = "j/n/Y"; }
+    if ($format == null){ $format = "j/m/Y"; }
     return $carbon->parse($fecha)->format($format);
 }
 

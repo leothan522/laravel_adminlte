@@ -176,7 +176,6 @@ class UsuariosComponent extends Component
         $user->permisos = $permisos;
         $user->update();
 
-
     }
 
     public function destroy($id)

@@ -12,6 +12,10 @@
                 <div class="card-header">
                     <h3 class="card-title">Usuarios Registrados</h3>
                     <div class="card-tools">
+                        <a href="{{ route('usuarios.excel') }}"
+                           class="btn btn-tool text-success swalDefaultInfo" {{--target="_blank"--}}>
+                            <i class="fas fa-file-excel"></i> <i class="fas fa-download"></i>
+                        </a>
                         <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                 class="fas fa-expand"></i>
                         </button>

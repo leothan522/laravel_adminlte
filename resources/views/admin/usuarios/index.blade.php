@@ -39,7 +39,22 @@
 @endsection
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+        $('.swalDefaultInfo').click(function() {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'info',
+                title: 'Generando Excel...',
+                didOpen: () => {
+                    Swal.showLoading()
+                },
+                showConfirmButton: false,
+                timer: 3000,
+            });
+        });
+    </script>
 @endsection
 
 @section('plugins.Sweetalert2', true)
