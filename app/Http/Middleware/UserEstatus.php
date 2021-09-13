@@ -19,7 +19,7 @@ class UserEstatus
         if (auth()->user()->estatus >= 1){
             return $next($request);
         }else{
-            return redirect('/');
+            return redirect('/logout');
         }
 
     }

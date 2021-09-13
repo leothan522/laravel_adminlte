@@ -70,7 +70,11 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
-
+    <style type="text/css">
+        .fondo {
+            background-color: rgb(244, 246, 249);
+        }
+    </style>
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
@@ -103,7 +107,7 @@
 
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
-
+    <x-livewire-alert::scripts />
 </body>
 
 </html>

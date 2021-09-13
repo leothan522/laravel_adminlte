@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->integer('role')->default(0);
             $table->integer('estatus')->default(1);
             $table->text('permisos')->nullable();
+            $table->integer('plataforma')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

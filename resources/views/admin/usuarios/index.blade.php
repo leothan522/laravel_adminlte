@@ -24,70 +24,7 @@
 
 
 
-    <div class="row justify-content-center">
-
-        <div class="col-md-3">
-
-            <div class="card card-gray-dark" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
-                <div class="card-header">
-                    <h3 class="card-title">Maximizable</h3>
-                    <div class="card-tools">
-                        {{--<button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
-                        </button>--}}
-                        <span class="btn btn-tool"><i class="fas fa-user-plus"></i></span>
-                    </div>
-                    <!-- /.card-tools -->
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    The body of the card
-                </div>
-                <!-- /.card-body -->
-            </div>
-
-        </div>
-
-        <div class="col-md-9">
-
-            <div class="card card-outline card-primary" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
-                <div class="card-header">
-                    <h3 class="card-title">Maximizable</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-
-
-                    <table class="table table-hover bg-light">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-
-                </div>
-                <!-- /.card-body -->
-            </div>
-
-        </div>
-    </div>
+   @livewire('usuarios-component')
 
 
 
@@ -106,4 +43,4 @@
 @endsection
 
 @section('plugins.Sweetalert2', true)
-@section('plugins.Pace', true)
+{{--@section('plugins.Pace', true)--}}

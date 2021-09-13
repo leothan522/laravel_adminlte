@@ -20,6 +20,32 @@ function role($i = null){
     }
 }
 
+function estatusUsuario($i, $icon = null){
+    if (is_null($icon)){
+        $suspendido = "Suspendido";
+        $activado = "Activado";
+    }else{
+        $suspendido = '<i class="fa fa-user-slash"></i>';
+        $activado = '<i class="fa fa-user-check"></i>';
+    }
+
+    $status = [
+        '0' => '<span class="text-danger">'.$suspendido.'</span>',
+        '1' => '<span class="text-success">'.$activado.'</span>'/*,
+        '2' => '<span class="text-success">Confirmado</span>'*/
+    ];
+    return $status[$i];
+}
+
+function iconoPlataforma($plataforma)
+{
+    if ($plataforma == 0) {
+        return '<i class="fas fa-desktop"></i>';
+    } else {
+        return '<i class="fas fa-mobile"></i>';
+    }
+}
+
 function haceCuanto($fecha){
     $carbon = new Carbon();
     return $carbon->parse($fecha)->diffForHumans();

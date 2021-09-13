@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/logout', function () {
+    Auth::logout();
+    verSweetAlert2("Contacta con el Administrador", 'error', '¡Usuario Suspendido!', null, '<i class="fa fa-user-alt-slash"></i>', 'error');
+    return redirect('/');
+})->name('cerrar');
 
 Route::middleware(['auth:sanctum', 'verified', 'isadmin', 'estatus'])->get('/dashboard', function () {
     return view('admin.dashboard');

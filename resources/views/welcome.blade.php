@@ -21,6 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
+    @include('sweetalert::alert')
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -28,7 +29,13 @@
                         @if(auth()->user()->role >= 1)
                             <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                         @endif
-                        <a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Perfil</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Perfil</a>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();this.closest('form').submit();"
+                                   class="text-sm text-gray-700 dark:text-gray-500 underline">{{ __('Log Out') }}</a>
+                            </form>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 

@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'isadmin', 'estatus', 'permisos'])->prefix('/dashboard')->group(function () {
 
-    Route::resource('usuarios', 'Admin\UsersController');
+    Route::get('usuarios', 'Admin\UsersController@index')->name('usuarios.index');
 
 });
