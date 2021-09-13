@@ -26,6 +26,7 @@
 
                 @include('admin.usuarios.modal_edit')
 
+                @include('admin.usuarios.modal_permisos')
 
 
                 </div>
