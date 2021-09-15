@@ -57,6 +57,15 @@
                     <label class="custom-control-label" for="customSwitch4"></label>
                 </div>
             </li>
+            <li class="list-group-item">
+                Descargar Excel
+                <div class="custom-control custom-switch custom-switch-on-success float-right">
+                    <input type="checkbox" wire:click="update_permisos({{ $user_id }}, 'usuarios.excel')"
+                           @if(leerJson($user_permisos, 'usuarios.excel')) checked @endif
+                           class="custom-control-input" id="customSwitch5">
+                    <label class="custom-control-label" for="customSwitch5"></label>
+                </div>
+            </li>
         </ul>
 
     </div>

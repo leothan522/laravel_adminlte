@@ -82,5 +82,10 @@ class User extends Authenticatable
         return 'user/profile';
     }
 
+    public function scopeBuscar($query, $keyword)
+    {
+        return $query->where('name', 'LIKE', "%$keyword%");
+    }
+
 
 }

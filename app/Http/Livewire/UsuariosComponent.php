@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -19,12 +20,22 @@ class UsuariosComponent extends Component
         'confirmed',
     ];
 
-    public $name, $email, $password, $role;
+    public $name, $email, $password, $role, $busqueda;
     public $user_id, $user_name, $user_email, $user_password, $user_role, $user_estatus, $user_fecha, $user_permisos;
+
+    public function mount(Request $request)
+    {
+        if (!is_null($request->usuario)){
+            $this->busqueda = $request->usuario;
+        }
+    }
 
     public function render()
     {
-        $users = User::orderBy('id', 'DESC')->paginate(5);
+        $users = User::buscar($this->busqueda)->orderBy('id', 'DESC')->paginate(30);
+        if ($users->isEmpty()){
+            verSweetAlert2("Busqueda sin resultados", 'toast', null, 'error');
+        }
         return view('livewire.usuarios-component')
             ->with('users', $users);
     }

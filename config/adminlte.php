@@ -228,8 +228,12 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+            'text'         => 'Buscar',        // Placeholder for the underlying input.
+            'topnav_right' => true,            // Or "topnav => true" to place on the left.
+            'route'          => 'search.navbar', // The url used to submit the data ('#' by default).
+            'method'       => 'post',          // 'get' or 'post' ('get' by default).
+            'input_name'   => 'searchVal',     // Name for the underlying input ('adminlteSearch' by default).
+            'id'           => 'navbarSearch'   // ID attribute for the underlying input (optional).
         ],
         [
             'type'         => 'fullscreen-widget',
