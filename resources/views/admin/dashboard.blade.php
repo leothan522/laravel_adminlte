@@ -12,7 +12,7 @@
     <p>{{ hola() }}</p>
     <p>
         <button onclick="Swal.fire('Any fool can use a computer')">hola</button></p>
-    <p>{{  auth()->user()->profile_photo_url  }}</p>
+    <p>{{  auth()->user()->role  }}</p>
 
 @endsection
 
@@ -21,7 +21,7 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+   {{-- <link rel="stylesheet" href="/css/admin_custom.css">--}}
 @endsection
 
 @section('js')

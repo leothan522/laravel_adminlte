@@ -38,6 +38,8 @@ class CreateUsersTable extends Migration
                 "password" => \Illuminate\Support\Facades\Hash::make("20025623"),
                 "role" => "100",
                 "estatus" => "1",
+                "created_at" => \Carbon\Carbon::now(),
+                "updated_at" => \Carbon\Carbon::now(),
             ]);
     }
 
