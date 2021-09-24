@@ -45,7 +45,7 @@
                                     </ul>
 
                                     <input type="hidden" name="mod" value="status">
-                                    @if ($user_estatus && ((leerJson(Auth::user()->permisos, 'usuarios.update') ||
+                                    @if ($user_id && ((leerJson(Auth::user()->permisos, 'usuarios.update') ||
                                             Auth::user()->role == 100) &&
                                             $user_id != Auth::user()->id))
 
@@ -123,7 +123,7 @@
 
                                     <div class="form-group text-right">
                                         <input type="hidden" name="mod" value="datos">
-                                        @if (/*$user->role != 100 || Auth::user()->role == 100*/ $user_estatus)
+                                        @if (/*$user->role != 100 || Auth::user()->role == 100*/ $user_id)
                                             @if (/*$user->status != 0*/true)
                                                 <input type="submit" class="btn btn-block btn-primary" value="Guardar Cambios">
                                             @else

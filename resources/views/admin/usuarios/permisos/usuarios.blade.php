@@ -66,6 +66,15 @@
                     <label class="custom-control-label" for="customSwitch5"></label>
                 </div>
             </li>
+            <li class="list-group-item">
+                Eliminar Usuarios
+                <div class="custom-control custom-switch custom-switch-on-success float-right">
+                    <input type="checkbox" wire:click="update_permisos({{ $user_id }}, 'usuarios.destroy')"
+                           @if(leerJson($user_permisos, 'usuarios.destroy')) checked @endif
+                           class="custom-control-input" id="customSwitch6">
+                    <label class="custom-control-label" for="customSwitch6"></label>
+                </div>
+            </li>
         </ul>
 
     </div>

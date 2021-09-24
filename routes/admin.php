@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth', 'isadmin', 'estatus', 'permisos'])->prefix('/dashboard')->group(function () {
 
-    Route::match(
-        ['get', 'post'],
-        '/navbar/search',
-        'Admin\SearchController@showNavbarSearchResults'
-    )->name('search.navbar');
+Route::middleware(['auth', 'isadmin', 'estatus'])->match(
+    ['get', 'post'],
+    '/dashboard/navbar/search',
+    'Admin\SearchController@showNavbarSearchResults'
+)->name('search.navbar');
+
+Route::middleware(['auth', 'isadmin', 'estatus', 'permisos'])->prefix('/dashboard')->group(function () {
 
     Route::get('usuarios/{usuario?}', 'Admin\UsersController@index')->name('usuarios.index');
     Route::get('export/usuarios', 'Admin\UsersController@export')->name('usuarios.excel');
-
 
 });
