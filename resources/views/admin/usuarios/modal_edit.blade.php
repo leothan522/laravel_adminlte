@@ -45,16 +45,16 @@
                                     </ul>
 
                                     <input type="hidden" name="mod" value="status">
-                                    @if ((leerJson(Auth::user()->permisos, 'usuarios.update') ||
+                                    @if ($user_estatus && ((leerJson(Auth::user()->permisos, 'usuarios.update') ||
                                             Auth::user()->role == 100) &&
-                                            $user_id != Auth::user()->id)
+                                            $user_id != Auth::user()->id))
 
                                         <div class="row">
                                             <div class="col-md-6">
                                                 @if ($user_estatus)
-                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-danger btn-block"><b>Suspender Usuario</b></button>
+                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-danger btn-block"><b>Suspender <br> Usuario</b></button>
                                                 @else
-                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-success btn-block"><b>Activar Usuario</b></button>
+                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-success btn-block"><b>Activar <br> Usuario</b></button>
                                                 @endif
                                             </div>
                                             <div class="col-md-6">
@@ -123,7 +123,7 @@
 
                                     <div class="form-group text-right">
                                         <input type="hidden" name="mod" value="datos">
-                                        @if (/*$user->role != 100 || Auth::user()->role == 100*/ true)
+                                        @if (/*$user->role != 100 || Auth::user()->role == 100*/ $user_estatus)
                                             @if (/*$user->status != 0*/true)
                                                 <input type="submit" class="btn btn-block btn-primary" value="Guardar Cambios">
                                             @else
