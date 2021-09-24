@@ -88,7 +88,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                                 </div>
-                                                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre y Apellido', 'wire:model' => 'user_name']) !!}
+                                                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre y Apellido', 'wire:model.debounce.10000ms' => 'user_name']) !!}
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -97,7 +97,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                                 </div>
-                                                {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'wire:model' => 'user_email']) !!}
+                                                {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'wire:model.debounce.10000ms' => 'user_email']) !!}
                                                 @error('user_email')
                                                 <span class="col-sm-12 text-sm text-bold text-danger">
                                                                         <i class="icon fas fa-exclamation-triangle"></i>
@@ -114,7 +114,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-user-cog"></i></span>
                                                 </div>
-                                                {!! Form::select('role', role() , null, ['class' => 'custom-select', 'wire:model' => 'user_role']) !!}
+                                                {!! Form::select('role', role() , null, ['class' => 'custom-select', 'wire:model.debounce.10000ms' => 'user_role']) !!}
                                             </div>
                                         </div>
                                     @else

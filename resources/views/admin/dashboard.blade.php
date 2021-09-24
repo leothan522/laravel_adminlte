@@ -12,6 +12,7 @@
     <p>{{ hola() }}</p>
     <p>
         <button onclick="Swal.fire('Any fool can use a computer')">hola</button></p>
+    <p>{{  auth()->user()->profile_photo_url  }}</p>
 
 @endsection
 

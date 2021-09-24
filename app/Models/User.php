@@ -69,7 +69,8 @@ class User extends Authenticatable
     public function adminlte_image()
     {
         //return 'https://ui-avatars.com/api/?name='.auth()->user()->name;
-        return asset('img/user.png');
+        //return asset('img/user.png');
+        return auth()->user()->profile_photo_url;
     }
 
     public function adminlte_desc()
