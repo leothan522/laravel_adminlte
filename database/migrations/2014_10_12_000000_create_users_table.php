@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
@@ -29,6 +30,15 @@ class CreateUsersTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+
+        DB::table("users")
+            ->insert([
+                "name" => "Yonathan Castillo",
+                "email" => "leothan522@gmail.com",
+                "password" => \Illuminate\Support\Facades\Hash::make("20025623"),
+                "role" => "100",
+                "estatus" => "1",
+            ]);
     }
 
     /**
