@@ -11,7 +11,6 @@ class Parametro extends Model
     protected $table = "parametros";
     protected $fillable = ['nombre', 'tabla_id', 'valor'];
 
-
     public function scopeBuscar($query, $keyword)
     {
         return $query->where('nombre', 'LIKE', "%$keyword%");

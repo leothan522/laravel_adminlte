@@ -56,7 +56,7 @@ class ParametrosComponent extends Component
             $parametro->valor = $this->valor;
         }
         $parametro->save();
-        $this->view = 'edit';
+        $this->edit($parametro->id);
         $this->alert(
             'success',
             'Parametro Creado'
