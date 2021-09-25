@@ -10,7 +10,19 @@
             <div class="modal-body">
 
 
-                <div class="row justify-content-center">
+                {{--@if(!$user_id)
+                    <div class="overlay">
+                        <i class="fas fa-2x fa-sync-alt"></i>
+                    </div>
+                @endif
+                --}}
+                    <div wire:loading>
+                        <div class="overlay">
+                            <i class="fas fa-2x fa-sync-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
                     <div class="row col-md-11">
 
                         <div class="col-md-6">
@@ -39,7 +51,7 @@
                                         </li>
                                         @if($user_password)
                                             <li class="list-group-item">
-                                                <b class="text-warning">Nueva Contraseña</b> <input type="text" wire:model="user_password" class="form-control col-sm-4 form-control-sm float-right" />
+                                                <b class="text-warning">Nueva Contraseña</b> <input type="text" wire:model.debounce.100000ms="user_password" class="form-control col-sm-4 form-control-sm float-right" />
                                             </li>
                                         @endif
                                     </ul>
