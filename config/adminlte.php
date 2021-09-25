@@ -252,6 +252,12 @@ return [
                     'route'  => 'usuarios.index',
                     'can'  => 'usuarios',
                 ],
+                [
+                    'text' => 'Parametros',
+                    'icon' => 'fas fa-fw fa-list',
+                    'route' => 'parametros.index',
+                    'can' => 'parametros',
+                ]
             ],
         ],
 

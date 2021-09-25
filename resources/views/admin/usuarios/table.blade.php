@@ -51,7 +51,13 @@
                 @endforeach
                 @else
                 <tr class="text-center">
-                    <td colspan="7">Sin resultados para la busqueda <strong class="text-bold"> { <span class="text-danger">{{ $busqueda }}</span> }</strong></td>
+                    <td colspan="7">
+                        <a href="{{ route('usuarios.index') }}">
+                            <span>
+                                Sin resultados para la busqueda <strong class="text-bold"> { <span class="text-danger">{{ $busqueda }}</span> }</strong>
+                            </span>
+                        </a>
+                    </td>
                 </tr>
             @endif
         </tbody>

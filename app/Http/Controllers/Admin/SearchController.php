@@ -29,6 +29,11 @@ class SearchController extends Controller
             return redirect()->route('usuarios.index', $keyword);
         }
 
+        if (strpos($route, '/dashboard/parametros') !== false){
+            verSweetAlert2("Resultados encontrados", 'toast');
+            return redirect()->route('parametros.index', $keyword);
+        }
+
         //en caso de no encontrar ninguna ruta
         verSweetAlert2("Opcion no encontrada", 'toast');
         return back();

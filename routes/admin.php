@@ -25,4 +25,6 @@ Route::middleware(['auth', 'isadmin', 'estatus', 'permisos'])->prefix('/dashboar
     Route::get('usuarios/{usuario?}', 'Admin\UsersController@index')->name('usuarios.index');
     Route::get('export/usuarios', 'Admin\UsersController@export')->name('usuarios.excel');
 
+    Route::get('parametros/{parametro?}', 'Admin\ParametrosController@index')->name('parametros.index');
+
 });

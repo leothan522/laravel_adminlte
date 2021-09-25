@@ -22,7 +22,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    {!! Form::text('name', null, ['class' => 'form-control', 'wire:model' => 'name', 'placeholder' => 'Nombre y Apellido']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control', 'wire:model.debounce.10000ms' => 'name', 'placeholder' => 'Nombre y Apellido']) !!}
                     @error('name')
                     <span class="col-sm-12 text-sm text-bold text-danger">
                                     <i class="icon fas fa-exclamation-triangle"></i>
@@ -37,7 +37,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     </div>
-                    {!! Form::email('email', null, ['class' => 'form-control', 'wire:model' => 'email', 'placeholder' => 'Email']) !!}
+                    {!! Form::email('email', null, ['class' => 'form-control', 'wire:model.debounce.10000ms' => 'email', 'placeholder' => 'Email']) !!}
                     @error('email')
                     <span class="col-sm-12 text-sm text-bold text-danger">
                                     <i class="icon fas fa-exclamation-triangle"></i>
@@ -52,7 +52,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     </div>
-                    {!! Form::text('password', null, ['class' => 'form-control', 'wire:model' => 'password', 'placeholder' => 'Contraseña']) !!}
+                    {!! Form::text('password', null, ['class' => 'form-control', 'wire:model.debounce.10000ms' => 'password', 'placeholder' => 'Contraseña']) !!}
                     <span class="input-group-append">
                                 <button type="button" wire:click="generarClave" class="btn btn-info btn-flat btn-sm text-sm">Generar!</button>
                             </span>
@@ -70,7 +70,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user-cog"></i></span>
                     </div>
-                    {!! Form::select('role', role() , null , ['class' => 'custom-select', 'wire:model' => 'role', 'placeholder' => 'Seleccione']) !!}
+                    {!! Form::select('role', role() , null , ['class' => 'custom-select', 'wire:model.debounce.10000ms' => 'role', 'placeholder' => 'Seleccione']) !!}
                     @error('role')
                     <span class="col-sm-12 text-sm text-bold text-danger">
                                     <i class="icon fas fa-exclamation-triangle"></i>
@@ -89,6 +89,11 @@
 
         </div>
         <!-- /.card-body -->
+        <div class="overlay-wrapper" wire:loading>
+            <div class="overlay">
+                <i class="fas fa-2x fa-sync-alt"></i>
+            </div>
+        </div>
     </div>
 
 </div>
