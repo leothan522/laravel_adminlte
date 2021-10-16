@@ -64,9 +64,9 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 @if ($user_estatus)
-                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-danger btn-block"><b>Suspender <br> Usuario</b></button>
+                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-danger btn-block"><b>Suspender Usuario</b></button>
                                                 @else
-                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-success btn-block"><b>Activar <br> Usuario</b></button>
+                                                    <button type="button" wire:click="cambiarEstatus({{ $user_id }})" class="btn btn-success btn-block"><b>Activar Usuario</b></button>
                                                 @endif
                                             </div>
                                             <div class="col-md-6">

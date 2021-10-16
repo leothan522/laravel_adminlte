@@ -40,7 +40,6 @@
 
 @section('js')
     <script>
-        console.log('Hi!');
         $('.swalDefaultInfo').click(function() {
             Swal.fire({
                 toast: true,
@@ -54,6 +53,7 @@
                 timer: 3000,
             });
         });
+        console.log('Hi!');
     </script>
 @endsection
 
