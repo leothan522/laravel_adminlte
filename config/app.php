@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/caracas',
 
     /*
     |--------------------------------------------------------------------------
@@ -235,5 +235,9 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],
+
+    //VARIABLES DE ENTORNO PROPIAS
+
+    'type' => env('APP_TYPE', 'local'),
 
 ];

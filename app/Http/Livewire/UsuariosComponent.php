@@ -21,7 +21,7 @@ class UsuariosComponent extends Component
     ];
 
     public $name, $email, $password, $role, $busqueda;
-    public $user_id, $user_name, $user_email, $user_password, $user_role, $user_estatus, $user_fecha, $user_permisos;
+    public $user_id, $user_name, $user_email, $user_password, $user_role, $user_estatus, $user_fecha, $user_permisos, $user_path;
 
     public function mount(Request $request)
     {
@@ -60,6 +60,7 @@ class UsuariosComponent extends Component
         $this->user_estatus = null;
         $this->user_fecha = null;
         $this->user_permisos = null;
+        $this->user_path = null;
     }
 
     public function store()
@@ -94,6 +95,7 @@ class UsuariosComponent extends Component
         $this->user_role = $user->role;
         $this->user_estatus = $user->estatus;
         $this->user_fecha = $user->created_at;
+        $this->user_path = $user->profile_photo_path;
     }
 
     public function update($id)
@@ -159,7 +161,6 @@ class UsuariosComponent extends Component
         $this->user_id = $user->id;
         $this->user_name = $user->name;
         $this->user_permisos = $user->permisos;
-
     }
 
     public function update_permisos($id, $permiso)

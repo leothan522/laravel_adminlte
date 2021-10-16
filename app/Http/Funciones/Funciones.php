@@ -204,7 +204,25 @@ function verSweetAlert2($mensaje, $type = 'success', $title = '¡Éxito!', $toas
 }
 
 
-
+function verImagen($path, $name)
+{
+    if (!is_null($path)){
+        if (file_exists(public_path('storage/'.$path))){
+            return asset('storage/'.$path);
+        }else{
+            if (config('app.type') == 'local'){
+                return asset('img/user.png');
+            }
+            return "https://ui-avatars.com/api/?name=$name&color=7F9CF5&background=EBF4FF";
+        }
+    }else{
+        //return 'https://ui-avatars.com/api/?name='.$name;
+        if (config('app.type') == 'local'){
+            return asset('img/user.png');
+        }
+        return "https://ui-avatars.com/api/?name=$name&color=7F9CF5&background=EBF4FF";
+    }
+}
 
 
 ?>
